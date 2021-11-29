@@ -21,4 +21,6 @@ public class NoticiaService {
         
         return noticiaRepository.save(Noticia);
     }
+
+
 }

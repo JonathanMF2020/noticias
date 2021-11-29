@@ -24,10 +24,6 @@ public class Persona {
     private String nombre;
     @Column(nullable=false)
     private String direccion;
-    @OneToOne(mappedBy = "persona")
-    private Usuario usuario;
-    @OneToOne(mappedBy = "persona")
-    private Personal personal;
 
 
     public String getApematerno() {
@@ -70,21 +66,6 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public Personal getPersonal() {
-        return personal;
-    }
-
-    public void setPersonal(Personal personal) {
-        this.personal = personal;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
 
 
     

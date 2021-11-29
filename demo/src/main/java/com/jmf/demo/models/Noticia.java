@@ -1,6 +1,7 @@
 package com.jmf.demo.models;
 
 import java.util.Collection;
+import java.util.Date;
 
 import javax.persistence.*;
 
@@ -14,6 +15,8 @@ public class Noticia {
     String encabezado;
     @Column(nullable = false)
     String cuerpo;
+    @Column(nullable = false)
+    Date fecha;
     @ManyToOne
     @JoinColumn(name = "idpersonal")
     Personal personal;
@@ -58,6 +61,14 @@ public class Noticia {
 
     public void setPersonal(Personal personal) {
         this.personal = personal;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
     

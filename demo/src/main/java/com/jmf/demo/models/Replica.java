@@ -3,11 +3,14 @@ package com.jmf.demo.models;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
+import javax.persistence.Table;
+@Entity
+@Table(name = "replica")
 public class Replica {
     @Id
     @GeneratedValue
@@ -15,6 +18,7 @@ public class Replica {
     @ManyToOne
     @JoinColumn(name="idcomentario")
     Comentario comentario;
+    @ManyToOne
     @JoinColumn(name="idpersona")
     Persona persona;
     @Column(nullable=false)
@@ -22,17 +26,11 @@ public class Replica {
     @Column(nullable=false)
     Date fechahora;
 
-    public Comentario getComentario() {
-        return comentario;
-    }
     
     public void setComentario(Comentario comentario) {
         this.comentario = comentario;
     }
 
-    public Persona getPersona() {
-        return persona;
-    }
 
     public void setPersona(Persona persona) {
         this.persona = persona;
@@ -60,6 +58,10 @@ public class Replica {
 
     public void setIdnoticia(int idnoticia) {
         this.idnoticia = idnoticia;
+    }
+
+    public Persona getPersona() {
+        return persona;
     }
 
 }

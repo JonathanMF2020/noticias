@@ -21,12 +21,18 @@ public class Comentario {
     String comentario;
     @Column(nullable=false)
     Date fechahora;
-    @OneToMany(mappedBy = "noticia")
-    List<Comentario> comentarios;
+    @OneToMany(mappedBy = "comentario")
+    List<Replica> replicas;
+
 
     public String getComentario() {
         return comentario;
     }
+
+    public Persona getPersona() {
+        return persona;
+    }
+    
 
     public void setComentario(String comentario) {
         this.comentario = comentario;
@@ -48,28 +54,20 @@ public class Comentario {
         this.idcomentario = idcomentario;
     }
 
-    public Persona getPersona() {
-        return persona;
-    }
-
     public void setPersona(Persona persona) {
         this.persona = persona;
-    }
-
-    public Noticia getNoticia() {
-        return noticia;
     }
 
     public void setNoticia(Noticia noticia) {
         this.noticia = noticia;
     }
 
-    public List<Comentario> getComentarios() {
-        return comentarios;
+    public List<Replica> getReplicas() {
+        return replicas;
     }
 
-    public void setComentarios(List<Comentario> comentarios) {
-        this.comentarios = comentarios;
+    public void setReplicas(List<Replica> replica) {
+        this.replicas = replica;
     }
 }
 
